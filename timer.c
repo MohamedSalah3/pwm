@@ -325,29 +325,29 @@ timer2Stop();
 }
 else
 {
-TCCR2 |= en_mode|en_prescal2 ;
+TCCR2A |= en_mode|en_prescal2 ;
 Prescaler_Value2=en_prescal2;
 TCNT2 = u8_initialValue;
 switch(en_OC){
 	case  T2_OC2_DIS:
 	{
-	TCCR2 &= 0xCF;
+	TCCR2A &= 0xCF;
 		break;
 	}
 	case T2_OC2_TOGGLE:
 	{
-		TCCR2 |=T2_OC2_TOGGLE;
+		TCCR2A |=T2_OC2_TOGGLE;
 		break;
 	}
 	case  T2_OC2_CLEAR:
 	{
-	TCCR2 |= T2_OC2_CLEAR;
+	TCCR2A |= T2_OC2_CLEAR;
 
 		break;
 	}
 	case T2_OC2_SET:
 	{
-		TCCR2 |=T2_OC2_SET;
+		TCCR2A |=T2_OC2_SET;
 		break;
 	}
 
@@ -356,13 +356,13 @@ OCR2  =u8_outputCompare;
 switch(en_interruptMask){
 case  T2_POLLING:
 pooling_2=0;
-TIMSK &= T2_POLLING;
+TIMSK2 &= T2_POLLING;
 break;
 case T2_INTERRUPT_NORMAL :
 {
 	pooling_2=1;
 G_interrupt_Enable();
-TIMSK |= T2_INTERRUPT_NORMAL;
+TIMSK2 |= T2_INTERRUPT_NORMAL;
 break;
 }
 case T2_INTERRUPT_CMP:
@@ -370,8 +370,8 @@ case T2_INTERRUPT_CMP:
 	pooling_2=1;
 G_interrupt_Enable();
 //SET_BIT(SREG,7);
-TIMSK |=T2_INTERRUPT_NORMAL;
-TIMSK |=T2_INTERRUPT_CMP;
+TIMSK2 |=T2_INTERRUPT_NORMAL;
+TIMSK2 |=T2_INTERRUPT_CMP;
 break;
 }
 }
@@ -403,8 +403,8 @@ return TCNT2;
 */
 void timer2Start(void)
 {
-TCCR2 &= 0xf8;
-TCCR2 |= Prescaler_Value2;
+TCCR2A &= 0xf8;
+TCCR2B |= Prescaler_Value2;
 }
 
 /**
@@ -412,7 +412,7 @@ TCCR2 |= Prescaler_Value2;
 */
 void timer2Stop(void)
 {
-TCCR2 &= 0xf8;
+TCCR2B &= 0xf8;
 
 }
 
@@ -483,8 +483,8 @@ void timer2DelayMs(uint16_t u16_delay_in_ms)
 	{
 		timer2Set(set_timer2);//10 for no prescaler....12 for 8 prescaler .... 8 for 32 prescaler ....6 for prescaler 64 .....
 		//131 for 128 prescaler.......194 for 256 prescaler....240 for 1024
-		while ((TIFR & 0x40)==0);
-		TIFR |=0x40;
+		while ((TIFR2 & 0x40)==0);
+		TIFR2 |=0x40;
 
 	}
 }
@@ -496,8 +496,8 @@ void timer2DelayUs(uint32_t u16_delay_in_us)
 	for (count=0;count<u16_delay_in_us;count++)
 	{
 		timer2Set(254);//254 for no prescaler
-		while ((TIFR & 0x40)==0);
-		TIFR |=0x40;
+		while ((TIFR2 & 0x40)==0);
+		TIFR2 |=0x40;
 
 	}
 
@@ -521,14 +521,14 @@ switch(pooling_2)
 		timer2Start();
 		timer2Set(pwm_time_on);
 		//freq 50KHZ is the Max frequency possible
-		while ((TIFR&0x04)==0);
-		TIFR |=0x04;
+		while ((TIFR2 & 0x04)==0);
+		TIFR2 |=0x04;
 		PORTC_DATA |=0xff;
 		timer2Start();
 		timer2Set(MAX_HOLD-pwm_time_on);
 		//freq
-		while ((TIFR & 0x04)==0);
-		TIFR |=0x04;
+		while ((TIFR2 & 0x04)==0);
+		TIFR2 |=0x04;
 		PORTC_DATA &=0x00;
 
 		break;

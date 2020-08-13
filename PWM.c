@@ -98,10 +98,8 @@ else if(Frequncy <= 3921 && Frequncy > 980)
   sgl_Prescaler=PWM_PRESCALER_8;
 else if(Frequncy <= 980 && Frequncy > 490)
   sgl_Prescaler=PWM_PRESCALER_32;
-else if(Frequncy <= 490 && Frequncy > 245)
+else if(Frequncy <= 490 && Frequncy > 122)
   sgl_Prescaler=PWM_PRESCALER_64;
-else if(Frequncy <= 245 && Frequncy > 122)
-  sgl_Prescaler=PWM_PRESCALER_128;
 else if(Frequncy <= 122 && Frequncy > 31)
   sgl_Prescaler=PWM_PRESCALER_256;
 else if(Frequncy <= 31 && Frequncy > 0)
@@ -115,7 +113,7 @@ switch(sgl_Prescaler)
     {
       case PWM_CH0:
       {
-        TCCR0|=PWM_PRESCALER_NO_CONFIG;
+        TCCR0B |= PWM_PRESCALER_NO_CONFIG;
         Ret=E_OK;
         break;
       }
@@ -155,7 +153,7 @@ switch(sgl_Prescaler)
     {
       case PWM_CH0:
       {
-        TCCR0|=PWM_PRESCALER_8_CONFIG;
+        TCCR0B|=PWM_PRESCALER_8_CONFIG;
         Ret=E_OK;
         break;
       }
@@ -208,7 +206,7 @@ switch(sgl_Prescaler)
     {
       case PWM_CH0:
       {
-        TCCR0|=PWM_PRESCALER_64_CONFIG;
+        TCCR0B|=PWM_PRESCALER_64_CONFIG;
         Ret=E_OK;
         break;
       }
@@ -242,7 +240,7 @@ switch(sgl_Prescaler)
     {
       case PWM_CH0:
       {
-        TCCR0|=PWM_PRESCALER_64_CONFIG;
+        TCCR0B|=PWM_PRESCALER_64_CONFIG;
         Ret=E_OK;
         break;
       }
@@ -269,33 +267,14 @@ switch(sgl_Prescaler)
     break;
   }
 
-  case PWM_PRESCALER_128:
-  {
-    switch(Channel)
-    {
-      case PWM_CH2:
-      {TCCR2|=PWM_PRESCALER_128_CONFIG_T2;
-        Ret=E_OK;
-        break;
-      }
-      default:
-      {
-        Ret=E_NOK;
-        break;
-      }
-
-    }
-    Ret=E_OK;
-    break;
-  }
-
+ 
   case PWM_PRESCALER_1024:
   {
     switch(Channel)
     {
       case PWM_CH0:
       {
-        TCCR0|=PWM_PRESCALER_1024_CONFIG;
+        TCCR0B|=PWM_PRESCALER_1024_CONFIG;
         Ret=E_OK;
         break;
       }

@@ -50,7 +50,7 @@ switch(Icu_Cfg->ICU_Ch_Timer)
     break;
     */
    case ICU_TIMER_CH1:
-   TCCR1B=0x03;
+   TCCR1B=0x05;
 	TIMSK1=0x01;
 	TIMER1OVF=(Icu_Cfg->timer_int);
     break;
@@ -94,7 +94,7 @@ switch(Icu_Channel)
   Ret=E_OK;
   break;
  */ case ICU_TIMER_CH1:
-  TCCR1B|=0x03;
+  TCCR1B|=0x05;
   Ret=E_OK;
   break;
  /* case ICU_TIMER_CH2:
@@ -133,7 +133,7 @@ return Ret;
 void EXTI0(void)
 {
   //u32_sgv_TimerVal=(uint32_t)TCNT1;
-  u32_sgv_TimerVal=(uint32_t)TCNT1+((uint32_t)u8_ovf_happend*(0xffff));
+  u32_sgv_TimerVal=TCNT1;
   u8_ovf_happend=0;
 //  if(READBIT(EXTERNAL_INTERRUPT_CONTROL,6))
     if(READBIT(EXTERNAL_INTERRUPT_CONTROL,ISC00) && READBIT(EXTERNAL_INTERRUPT_CONTROL,ISC01))

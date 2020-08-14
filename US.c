@@ -24,14 +24,19 @@ ERROR_STATUS Us_Init(void)
 {uint8_t Ret;
 Ret=DIO_init(&US_Configuration);
 Ret=Icu_Init(&ICU_Configuration);
+timer2Init(T2_NORMAL_MODE,T2_OC2B_CLEAR,T2_PRESCALER_1024,0,0,0,T2_INTERRUPT_NORMAL);
 return Ret;
 }
 ERROR_STATUS Us_Trigger(void)
 {uint8_t Ret=0;
-Ret=DIO_Write(GPIOC,BIT4,HIGH);
-//timer2Start();
-//timer2DelayMs(1);
-Ret=DIO_Write(GPIOC,BIT4,LOW);
+if(timer2_interrupt_raised){
+timer2_interrupt_raised=0;
+Ret=DIO_Toggle(GPIOC,BIT4);
+for (int i=0;i<50;i++)
+{;/*a pulse for 10 Micro seconds*/
+}
+Ret=DIO_Toggle(GPIOC,BIT4);
+}
 return Ret;	
 }
 

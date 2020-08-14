@@ -15,7 +15,7 @@ ptr_to_Fun Pin_Change_Interrupt_Request_2;//=Timer2_interrupt_routine;
 ptr_to_Fun watch_dog_interrupt;
 ptr_to_Fun TIMER2COMPA;
 ptr_to_Fun TIMER2COMPB;
-ptr_to_Fun TIMER2OVF;
+ptr_to_Fun TIMER2OVF=Timer2_interrupt_routine;
 ptr_to_Fun TIMER1CAPT;
 ptr_to_Fun TIMER1COMPA;
 ptr_to_Fun TIMER1COMPB;

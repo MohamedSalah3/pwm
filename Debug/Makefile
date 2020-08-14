@@ -43,6 +43,7 @@ C_SRCS +=  \
 ../main.c \
 ../PWM.c \
 ../PWM_Config.c \
+../timer.c \
 ../US.c \
 ../UsConfig.c
 
@@ -62,6 +63,7 @@ Interrupts.o \
 main.o \
 PWM.o \
 PWM_Config.o \
+timer.o \
 US.o \
 UsConfig.o
 
@@ -75,6 +77,7 @@ Interrupts.o \
 main.o \
 PWM.o \
 PWM_Config.o \
+timer.o \
 US.o \
 UsConfig.o
 
@@ -88,6 +91,7 @@ Interrupts.d \
 main.d \
 PWM.d \
 PWM_Config.d \
+timer.d \
 US.d \
 UsConfig.d
 
@@ -101,6 +105,7 @@ Interrupts.d \
 main.d \
 PWM.d \
 PWM_Config.d \
+timer.d \
 US.d \
 UsConfig.d
 
@@ -114,6 +119,8 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 # AVR32/GNU C Compiler
+
+
 
 
 

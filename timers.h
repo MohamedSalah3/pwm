@@ -21,6 +21,7 @@ extern uint8_t pooling_2;
 extern void Timer_interrupt_COMP_routine(void);
 extern void Timer2_interrupt_routine(void);
 extern void Timer2_interrupt_COMP_routine(void);
+extern volatile uint8_t timer2_interrupt_raised; 
 #define T0_PWM_GPIO	GPIOD
 #define T0_PWM_BIT	BIT0
 
@@ -58,7 +59,7 @@ typedef enum En_timer0Interrupt_t{
 
 
 
-
+/*
 // for timer 1
 typedef enum En_timer1Mode_t{
 	T1_NORMAL_MODE=0x0000,T1_COMP_MODE_OCR1A_TOP=0x0008,
@@ -66,9 +67,7 @@ typedef enum En_timer1Mode_t{
 }En_timer1Mode_t;
 
 typedef enum En_timer1OC_t{
-	T1_OC1_DIS=0,T1_OC1A_TOGGLE=0x4000,T1_OC1B_TOGGLE=0x1000,
-	T1_OC1A_CLEAR=0x8000,T1_OC1B_CLEAR=0x2000,
-	T1_OC1A_SET=0xC000,T1_OC1B_SET=0x3000
+	T1_OC1_DIS=0,T1_OC1A_TOGGLE=0x4000,T1_OC1B_TOGGLE=0x1000,T1_OC1A_CLEAR=0x8000,T1_OC1B_CLEAR=0x2000,T1_OC1A_SET=0xC000,T1_OC1B_SET=0x3000
 }En_timer1OC_t;
 
 typedef enum En_timer1perscaler_t{
@@ -84,7 +83,7 @@ typedef enum En_timer1Interrupt_t{
 }En_timer1Interrupt_t;
 
 
-
+*/
 
 // for timer 2
 typedef enum En_timer2Mode_t{
@@ -92,17 +91,24 @@ typedef enum En_timer2Mode_t{
 }En_timer2Mode_t;
 
 typedef enum En_timer2OC_t{
-	T2_OC2_DIS=0,T2_OC2_TOGGLE=0x10,T2_OC2_CLEAR=0x20,T2_OC2_SET=0x30
+	T2_OC2A_DIS=0,T2_OC2A_TOGGLE=0x40,
+	T2_OC2A_CLEAR=0x80,T2_OC2A_SET=0xA0
+,	T2_OC2B_DIS=0,T2_OC2B_TOGGLE=0x10,
+	T2_OC2B_CLEAR=0x20,T2_OC2B_SET=0x30
+
 }En_timer2OC_t;
 
 typedef enum En_timer2perscaler_t{
-	T2_NO_CLOCK=0,T2_PRESCALER_NO=0x01,T2_PRESCALER_8=0x02, T2_PRESCALER_32=0x03,
-	 T2_PRESCALER_64=0x04, T2_PRESCALER_128=0x05, T2_PRESCALER_256 = 0x06, T2_PRESCALER_1024=0x07
+ T2_NO_CLOCK=0,T2_PRESCALER_NO=0x01,
+ T2_PRESCALER_8=0x02, T2_PRESCALER_32=0x03,
+ T2_PRESCALER_64=0x04, T2_PRESCALER_128=0x05,
+ T2_PRESCALER_256 = 0x06, T2_PRESCALER_1024=0x07
 }En_timer2perscaler_t;
 
 	typedef enum En_timer2Interrupt_t{
-T2_POLLING=0,T2_INTERRUPT_NORMAL=0x40,T2_INTERRUPT_CMP=0x80
-
+T2_POLLING=0,
+T2_INTERRUPT_NORMAL=0x01,
+T2_INTERRUPT_CMP=0x03
 }En_timer2Interrupt_t;
 
 
@@ -171,50 +177,55 @@ void timer0SwPWM(uint8_t u8_dutyCycle,uint8_t u8_frequency);
  * @param initialValue
  * @param outputCompare
  * @param interruptMask
- */
+ *//*
 void timer1Init(En_timer1Mode_t en_mode,En_timer1OC_t en_OC,En_timer1perscaler_t en_prescal, uint16_t u16_initialValue, uint16_t u16_outputCompareA, uint16_t u16_outputCompareB,uint16_t u16_inputCapture, En_timer1Interrupt_t en_interruptMask);
-
+*/
 /**
  * Description:
  * @param value
- */
+ *//*
 void timer1Set(uint16_t u16_value);
-
+*/
 /**
  * Description:
  * @return
- */
+ *//*
 uint16_t timer1Read(void);
-
+*/
 /**
  * Description:
  */
+/*
 void timer1Start(void);
-
+*/
 /**
  * Description:
  */
+/*
 void timer1Stop(void);
-
+*/
 /**
  * Description:
  * @param delay
  */
+/*
 void timer1DelayMs(uint16_t u16_delay_in_ms);
-
+*/
 /*
  * user defined
  */
+/*
 void timer1DelayUs(uint32_t u32_delay_in_us);
-
+*/
 /**
  * Description:
  * @param dutyCycle
  */
+/*
 void timer1SwPWM(uint8_t u8_dutyCycle,uint8_t u8_frequency);
 
 
-
+*/
 
 
 /*===========================Timer2 Control===============================*/

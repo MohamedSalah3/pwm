@@ -84,7 +84,7 @@
 #define ICR1H        *((reg_type8_t)(0x87))
 #define ICR1L        *((reg_type8_t)(0x86))
 #define ICR1        *((reg_type16_t)(0x86))
-
+#define TOV0  0
 /*
  * Timer 2 Registers
  */

@@ -121,6 +121,12 @@
     <Compile Include="std_types.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="timers.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="US.c">
       <SubType>compile</SubType>
     </Compile>

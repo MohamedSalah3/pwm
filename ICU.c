@@ -156,5 +156,5 @@ void EXTI0(void)
 void timer_interrupt1(void)
 {
   u8_ovf_happend=1;
-
+Us_Trigger();
 }

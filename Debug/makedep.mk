@@ -18,6 +18,8 @@ PWM.c
 
 PWM_Config.c
 
+timer.c
+
 US.c
 
 UsConfig.c

@@ -21,7 +21,8 @@ extern uint8_t pooling_2;
 extern void Timer_interrupt_COMP_routine(void);
 extern void Timer2_interrupt_routine(void);
 extern void Timer2_interrupt_COMP_routine(void);
-extern volatile uint8_t timer2_interrupt_raised; 
+extern volatile uint8_t timer2_interrupt_raised;
+extern volatile uint16_t timer2_interrupt_counter ;
 #define T0_PWM_GPIO	GPIOD
 #define T0_PWM_BIT	BIT0
 

@@ -22,28 +22,35 @@ ERROR_STATUS motor_start_sm(uint8_t state)
   uint8_t ret=E_OK;
 switch (state) {
   case MOTOR_STOP:
-
+Pwm_Stop(PWM_CH0);
+DIO_Write(GPIOD,BIT7,LOW);
   break;
   case MOTOR_TWO_M:
-
+  DIO_Write(GPIOD,BIT7,HIGH);
+Pwm_Start(PWM_CH0,10,10);
   break;
   case MOTOR_ONE_HALF_M:
-
+  DIO_Write(GPIOD,BIT7,HIGH);
+Pwm_Start(PWM_CH0,20,10);
   break;
   case MOTOR_ONE_M:
-
+  DIO_Write(GPIOD,BIT7,HIGH);
+  Pwm_Start(PWM_CH0,30,10);
   break;
   case MOTOR_HALF_M:
-
+  DIO_Write(GPIOD,BIT7,HIGH);
+  Pwm_Start(PWM_CH0,50,10);
   break;
   case MOTOR_30_CM:
-
+  DIO_Write(GPIOD,BIT7,HIGH);
+  Pwm_Start(PWM_CH0,70,10);
   break;
   case MOTOR_20_CM:
-
+  DIO_Write(GPIOD,BIT7,HIGH);
+  Pwm_Start(PWM_CH0,90,10);
   break;
   default:
-
+ret=E_NOK;
   break;
 }
 

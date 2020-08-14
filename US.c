@@ -3,7 +3,7 @@
  *
  * Created: 18/02/2020 11:34:13 م
  *  Author: mo
- */ 
+ */
 #include "Us.h"
 #include "UsConfig.h"
 
@@ -31,13 +31,13 @@ ERROR_STATUS Us_Trigger(void)
 {uint8_t Ret=0;
 if(timer2_interrupt_raised){
 timer2_interrupt_raised=0;
-Ret=DIO_Toggle(GPIOC,BIT4);
+Ret=DIO_Toggle(GPIOD,BIT1);
 for (int i=0;i<50;i++)
 {;/*a pulse for 10 Micro seconds*/
 }
-Ret=DIO_Toggle(GPIOC,BIT4);
+Ret=DIO_Toggle(GPIOD,BIT1);
 }
-return Ret;	
+return Ret;
 }
 
 
@@ -48,4 +48,3 @@ ERROR_STATUS Us_GetDistance(uint16_t *Distance)
 	*Distance=u32l_Time;
 	return Ret;
 }
-

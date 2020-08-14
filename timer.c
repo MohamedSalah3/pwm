@@ -12,6 +12,7 @@ uint8_t Prescaler_Value2=0;
 uint8_t u8g_T1_Prescaler=0;
 volatile uint8_t pwm_time_on=0,flag=0;
 volatile uint8_t timer2_interrupt_raised = 0;
+volatile uint16_t timer2_interrupt_counter =0;
 void timer0Init(En_timer0Mode_t en_mode,En_timer0OC_t en_OC0,En_timer0perscaler_t en_prescal,uint8_t u8_initialValue, uint8_t u8_outputCompare,En_timer0Interrupt_t en_interruptMask)
 {
 if(en_prescal == T0_NO_CLOCK)
@@ -552,5 +553,5 @@ void Timer2_interrupt_COMP_routine(void)
 void Timer2_interrupt_routine(void)
 {
 timer2_interrupt_raised=1;
-
+timer2_interrupt_counter++;
 }

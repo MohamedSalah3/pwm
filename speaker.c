@@ -20,44 +20,49 @@ ERROR_STATUS speaker_init(void)
 ERROR_STATUS speaker_start_sm(uint8_t state)
 {
   uint8_t ret=E_OK;
+  static uint16_t counter=0;
+  if (timer2_interrupt_raised)
+  {
+	  counter++;
+  }
 switch (state) {
   case SPEAKER_STOP:
   DIO_Write(GPIOC,BIT3,LOW);
   break;
   case SPEAKER_TWO_M:
-  if(timer2_interrupt_counter==1000){
-  timer2_interrupt_counter=0;
-  ret=DIO_Toggle(GPIOD,BIT1);
+  if(counter==100){
+  counter=0;
+  ret=DIO_Toggle(GPIOC,BIT3);
 }
   break;
   case SPEAKER_ONE_HALF_M:
-  if(timer2_interrupt_counter==500){
-  timer2_interrupt_counter=0;
-  ret=DIO_Toggle(GPIOD,BIT1);
+  if(counter==50){
+  counter=0;
+  ret=DIO_Toggle(GPIOC,BIT3);
 }
   break;
   case SPEAKER_ONE_M:
-  if(timer2_interrupt_counter==250){
-  timer2_interrupt_counter=0;
-  ret=DIO_Toggle(GPIOD,BIT1);
+  if(counter==25){
+  counter=0;
+  ret=DIO_Toggle(GPIOC,BIT3);
 }
   break;
   case SPEAKER_HALF_M:
-  if(timer2_interrupt_counter==125){
-  timer2_interrupt_counter=0;
-  ret=DIO_Toggle(GPIOD,BIT1);
+  if(counter==12){
+  counter=0;
+  ret=DIO_Toggle(GPIOC,BIT3);
 }
   break;
   case SPEAKER_30_CM:
-  if(timer2_interrupt_counter==75){
-  timer2_interrupt_counter=0;
-  ret=DIO_Toggle(GPIOD,BIT1);
+  if(counter==7){
+  counter=0;
+  ret=DIO_Toggle(GPIOC,BIT3);
 }
 break;
   case SPEAKER_20_CM:
-  if(timer2_interrupt_counter==25){
-  timer2_interrupt_counter=0;
-  ret=DIO_Toggle(GPIOD,BIT1);
+  if(counter==2){
+  counter=0;
+  ret=DIO_Toggle(GPIOC,BIT3);
 }
 break;
   default:

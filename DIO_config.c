@@ -19,11 +19,7 @@ DIO_Cfg_s Dio_configurationC= {
   OUTPUT
 };
 
-DIO_Cfg_s Dio_configurationD= {
-  GPIOD,
-  BIT6,
-  OUTPUT
-};
+
 DIO_Cfg_s speaker_Configuration_0= {
   GPIOC,
   BIT3,
@@ -31,6 +27,6 @@ DIO_Cfg_s speaker_Configuration_0= {
 };
 DIO_Cfg_s motor_Configuration_0 = {
   GPIOD,
-  BIT7,
+  BIT7|BIT6,
   OUTPUT
 };

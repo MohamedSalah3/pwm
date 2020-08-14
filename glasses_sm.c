@@ -24,7 +24,7 @@ uint16_t Distance = 0;
 uint8_t state_machine=0;
 Us_Trigger();
 Us_GetDistance(&Distance);
-state_machine = 6
+state_machine = 6;
 motor_start_sm(state_machine);
 speaker_start_sm(state_machine);
 

@@ -27,38 +27,43 @@ switch (state) {
   case SPEAKER_TWO_M:
   if(timer2_interrupt_counter==1000){
   timer2_interrupt_counter=0;
-  Ret=DIO_Toggle(GPIOD,BIT1);
+  ret=DIO_Toggle(GPIOD,BIT1);
+}
   break;
   case SPEAKER_ONE_HALF_M:
   if(timer2_interrupt_counter==500){
   timer2_interrupt_counter=0;
-  Ret=DIO_Toggle(GPIOD,BIT1);
+  ret=DIO_Toggle(GPIOD,BIT1);
+}
   break;
   case SPEAKER_ONE_M:
   if(timer2_interrupt_counter==250){
   timer2_interrupt_counter=0;
-  Ret=DIO_Toggle(GPIOD,BIT1);
+  ret=DIO_Toggle(GPIOD,BIT1);
+}
   break;
   case SPEAKER_HALF_M:
   if(timer2_interrupt_counter==125){
   timer2_interrupt_counter=0;
-  Ret=DIO_Toggle(GPIOD,BIT1);
+  ret=DIO_Toggle(GPIOD,BIT1);
+}
   break;
   case SPEAKER_30_CM:
   if(timer2_interrupt_counter==75){
   timer2_interrupt_counter=0;
-  Ret=DIO_Toggle(GPIOD,BIT1);
-  break;
+  ret=DIO_Toggle(GPIOD,BIT1);
+}
+break;
   case SPEAKER_20_CM:
   if(timer2_interrupt_counter==25){
   timer2_interrupt_counter=0;
-  Ret=DIO_Toggle(GPIOD,BIT1);
-  break;
+  ret=DIO_Toggle(GPIOD,BIT1);
+}
+break;
   default:
 ret=E_NOK;
   break;
 }
 
-
-  return ret;
+return ret;
 }

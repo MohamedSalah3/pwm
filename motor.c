@@ -26,27 +26,45 @@ Pwm_Stop(PWM_CH0);
 DIO_Write(GPIOD,BIT7,LOW);
   break;
   case MOTOR_TWO_M:
+  if(timer2_interrupt_counter==1000){
+  timer2_interrupt_counter=0;
   DIO_Write(GPIOD,BIT7,HIGH);
+}
 Pwm_Start(PWM_CH0,10,10);
   break;
   case MOTOR_ONE_HALF_M:
+  if(timer2_interrupt_counter==500){
+  timer2_interrupt_counter=0;
   DIO_Write(GPIOD,BIT7,HIGH);
+  }
 Pwm_Start(PWM_CH0,20,10);
   break;
   case MOTOR_ONE_M:
+  if(timer2_interrupt_counter==250){
+  timer2_interrupt_counter=0;
   DIO_Write(GPIOD,BIT7,HIGH);
+}
   Pwm_Start(PWM_CH0,30,10);
   break;
   case MOTOR_HALF_M:
+  if(timer2_interrupt_counter==125){
+  timer2_interrupt_counter=0;
   DIO_Write(GPIOD,BIT7,HIGH);
+}
   Pwm_Start(PWM_CH0,50,10);
   break;
   case MOTOR_30_CM:
+  if(timer2_interrupt_counter==75){
+  timer2_interrupt_counter=0;
   DIO_Write(GPIOD,BIT7,HIGH);
+}
   Pwm_Start(PWM_CH0,70,10);
   break;
   case MOTOR_20_CM:
+  if(timer2_interrupt_counter==25){
+  timer2_interrupt_counter=0;
   DIO_Write(GPIOD,BIT7,HIGH);
+}
   Pwm_Start(PWM_CH0,90,10);
   break;
   default:

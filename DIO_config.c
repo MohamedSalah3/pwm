@@ -24,3 +24,13 @@ DIO_Cfg_s Dio_configurationD= {
   BIT6,
   OUTPUT
 };
+DIO_Cfg_s speaker_Configuration_0= {
+  GPIOD,
+  BIT6,
+  OUTPUT
+};
+DIO_Cfg_s motor_Configuration_0 = {
+  GPIOD,
+  BIT6,
+  OUTPUT
+};

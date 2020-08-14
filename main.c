@@ -11,7 +11,7 @@ static uint32_t timespend=0;
 int main(void)
 {
 	DIO_init(&Dio_configurationD);
-	Pwm_Init(&PWM_Configuration_0);
+	motor_init();
 	DIO_Write(GPIOD,PIN6,HIGH);
     Us_Init();
 	while(1)

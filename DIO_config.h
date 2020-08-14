@@ -57,6 +57,9 @@ extern DIO_Cfg_s Dio_configurationA;
 extern DIO_Cfg_s Dio_configurationD;
 extern DIO_Cfg_s Dio_configurationB;
 extern DIO_Cfg_s Dio_configurationC;
+extern DIO_Cfg_s speaker_Configuration_0;
+extern DIO_Cfg_s motor_Configuration_0;
+
 #define E_OK 0
 #define E_NOK 1
 typedef uint8_t ERROR_STATUS;

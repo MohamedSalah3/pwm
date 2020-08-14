@@ -11,6 +11,7 @@ int main(void)
 system_init();
 	while(1)
     {
+		//Pwm_Start(PWM_CH0,50,10);
 		system_update();
     }
 }

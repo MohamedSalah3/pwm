@@ -9,7 +9,6 @@
 static uint16_t Distance = 0;
 static uint8_t state_machine=0;
 
-static uint32_t ticks=0;
 void system_init(void)
 {
 
@@ -25,9 +24,6 @@ void system_update(void)
 {
 Us_Trigger();
 Us_GetDistance(&Distance);
-
-
-ticks=Distance;
 if (Distance>200)
 {
 	state_machine=0;

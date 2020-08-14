@@ -1,5 +1,6 @@
 timer.d timer.o: .././timer.c .././timers.h .././registers.h \
- .././std_types.h .././Error.h .././Interrupts.h
+ .././std_types.h .././Error.h .././Interrupts.h .././DIO.h \
+ .././DIO_config.h
 
 .././timers.h:
 
@@ -10,3 +11,7 @@ timer.d timer.o: .././timer.c .././timers.h .././registers.h \
 .././Error.h:
 
 .././Interrupts.h:
+
+.././DIO.h:
+
+.././DIO_config.h:

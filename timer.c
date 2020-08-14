@@ -4,6 +4,7 @@
 #include "timers.h"
 #include "registers.h"
 #include "Interrupts.h"
+#include "DIO.h"
 uint8_t volatile status_Flag=1;
 uint8_t Prescaler_Value=0;
 uint8_t pooling=0;
@@ -551,7 +552,7 @@ void Timer2_interrupt_COMP_routine(void)
 
 }
 void Timer2_interrupt_routine(void)
-{
+{ 
 timer2_interrupt_raised=1;
 timer2_interrupt_counter++;
 }

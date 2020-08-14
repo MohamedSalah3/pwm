@@ -25,21 +25,21 @@ ERROR_STATUS motor_start_sm(uint8_t state)
   uint8_t ret=E_OK;
   static uint8_t speed=0;
     static uint16_t counter=0;
-	 Pwm_Start(PWM_CH0,speed,10);
+	 Pwm_Start(PWM_CH0,80,10);
     if (timer2_interrupt_raised)
     {
 	    counter++;
     }
 switch (state) {
   case MOTOR_STOP:
-//Pwm_Stop(PWM_CH0);
-DIO_Write(GPIOD,BIT7,LOW);
+
+//DIO_Write(GPIOD,BIT7,LOW);
   break;
   case MOTOR_TWO_M:
  speed=10;
   if(counter==100){
   counter=0;
-  DIO_Write(GPIOD,BIT7,HIGH);
+  //DIO_Write(GPIOD,BIT7,HIGH);
 }
 
   break;
@@ -47,7 +47,7 @@ DIO_Write(GPIOD,BIT7,LOW);
   case MOTOR_ONE_HALF_M:
   if(counter==50){
   counter=0;
-  DIO_Write(GPIOD,BIT7,HIGH);
+  //DIO_Write(GPIOD,BIT7,HIGH);
   }
 
   break;
@@ -55,14 +55,14 @@ DIO_Write(GPIOD,BIT7,LOW);
   speed=30;
   if(counter==25){
   counter=0;
-  DIO_Write(GPIOD,BIT7,HIGH);
+ // DIO_Write(GPIOD,BIT7,HIGH);
 }
   break;
   case MOTOR_HALF_M:
 speed=50;
   if(counter==12){
   counter=0;
-  DIO_Write(GPIOD,BIT7,HIGH);
+  //DIO_Write(GPIOD,BIT7,HIGH);
 }
 
   break;
@@ -71,7 +71,7 @@ speed=50;
 speed=70;
   if(counter==7){
   counter=0;
-  DIO_Write(GPIOD,BIT7,HIGH);
+ // DIO_Write(GPIOD,BIT7,HIGH);
 }
 
   break;
@@ -80,7 +80,7 @@ speed=70;
 speed=90;
   if(counter==2){
   counter=0;
-  DIO_Write(GPIOD,BIT7,HIGH);
+ // DIO_Write(GPIOD,BIT7,HIGH);
 }
 
   break;

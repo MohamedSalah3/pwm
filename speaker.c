@@ -8,7 +8,7 @@
 
 
 
-
+static uint16_t counter=0;
 
 ERROR_STATUS speaker_init(void)
 {
@@ -20,50 +20,86 @@ ERROR_STATUS speaker_init(void)
 ERROR_STATUS speaker_start_sm(uint8_t state)
 {
   uint8_t ret=E_OK;
-  static uint16_t counter=0;
+  
   if (timer2_interrupt_raised)
   {
 	  counter++;
   }
 switch (state) {
-  case SPEAKER_STOP:
-  DIO_Write(GPIOC,BIT3,LOW);
-  break;
-  case SPEAKER_TWO_M:
-  if(counter==100){
-  counter=0;
-  ret=DIO_Toggle(GPIOC,BIT3);
-}
-  break;
+	case SPEAKER_STOP:
+		 DIO_Write(GPIOC,BIT3,LOW);
+		 DIO_Write(GPIOD,BIT7,LOW);
+	break;
+	case SPEAKER_TWO_M:
+		if(counter < 43)
+		 {
+			  DIO_Write(GPIOC,BIT3,LOW);
+			  DIO_Write(GPIOD,BIT7,LOW);
+		}
+		else if(counter >= 43 && counter <= 63)
+		{
+			DIO_Write(GPIOC,BIT3,HIGH);
+		    DIO_Write(GPIOD,BIT7,HIGH);
+		
+		
+		}else{counter=0;}
+  
+   break;
   case SPEAKER_ONE_HALF_M:
-  if(counter==50){
-  counter=0;
-  ret=DIO_Toggle(GPIOC,BIT3);
-}
+  if(counter < 37)
+  {
+	  DIO_Write(GPIOC,BIT3,LOW);
+	  DIO_Write(GPIOD,BIT7,LOW);
+  }else if(counter >= 37 && counter <= 63)
+  {  DIO_Write(GPIOC,BIT3,HIGH);
+	  DIO_Write(GPIOD,BIT7,HIGH);
+	 
+  }else{counter=0;}
+  
   break;
   case SPEAKER_ONE_M:
-  if(counter==25){
-  counter=0;
-  ret=DIO_Toggle(GPIOC,BIT3);
-}
+  if(counter < 31)
+  {
+	  DIO_Write(GPIOC,BIT3,LOW);
+	  DIO_Write(GPIOD,BIT7,LOW);
+  }else if(counter >= 31 && counter <= 63)
+  {  DIO_Write(GPIOC,BIT3,HIGH);
+	  DIO_Write(GPIOD,BIT7,HIGH);  
+  }else{counter=0;}
   break;
   case SPEAKER_HALF_M:
-  if(counter==12){
-  counter=0;
-  ret=DIO_Toggle(GPIOC,BIT3);
-}
-  break;
+  if(counter < 25)
+  {
+	  DIO_Write(GPIOC,BIT3,LOW);
+	  DIO_Write(GPIOD,BIT7,LOW);
+  }else if(counter >= 25 && counter <= 63)
+  {  DIO_Write(GPIOC,BIT3,HIGH);
+	  DIO_Write(GPIOD,BIT7,HIGH);
+	  
+  }else{
+	  counter=0;
+	  }
+    break;
   case SPEAKER_30_CM:
-  if(counter==7){
-  counter=0;
-  ret=DIO_Toggle(GPIOC,BIT3);
-}
+ if(counter < 19)
+ {
+	 DIO_Write(GPIOC,BIT3,LOW);
+	 DIO_Write(GPIOD,BIT7,LOW);
+ }else if(counter >= 19 && counter <= 63)
+ {  DIO_Write(GPIOC,BIT3,HIGH);
+	 DIO_Write(GPIOD,BIT7,HIGH);
+	 
+ }else{counter=0;}
 break;
   case SPEAKER_20_CM:
-  if(counter==2){
-  counter=0;
-  ret=DIO_Toggle(GPIOC,BIT3);
-}
+ if(counter < 13)
+ {
+	 DIO_Write(GPIOC,BIT3,LOW);
+	 DIO_Write(GPIOD,BIT7,LOW);
+ }else if(counter >= 13 && counter <= 63)
+ {  DIO_Write(GPIOC,BIT3,HIGH);
+	 DIO_Write(GPIOD,BIT7,HIGH);
+ }else{counter=0;}
 break;
   default:
 ret=E_NOK;

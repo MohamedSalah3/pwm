@@ -82,6 +82,12 @@
     <Compile Include="Error.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="glasses_sm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glasses_sm.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="ICU.c">
       <SubType>compile</SubType>
     </Compile>
@@ -103,6 +109,12 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="motor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="motor.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="PWM.c">
       <SubType>compile</SubType>
     </Compile>
@@ -116,6 +128,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="registers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="speaker.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="speaker.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="std_types.h">

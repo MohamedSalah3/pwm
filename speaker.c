@@ -25,7 +25,7 @@ switch (state) {
   break;
   case SPEAKER_TWO_M:
   break;
-  case SPEAKER_HALF_M:
+  case SPEAKER_ONE_HALF_M:
   break;
   case SPEAKER_ONE_M:
   break;
@@ -44,6 +44,3 @@ switch (state) {
   return ret;
 }
 
-
-
-}

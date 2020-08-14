@@ -10,7 +10,7 @@
 #define SPEAKER_H_
 
 #include "DIO.h"
-
+#include "timers.h"
 
 #define SPEAKER_STOP 0
 #define SPEAKER_TWO_M 1

@@ -37,12 +37,15 @@ SUBDIRS :=
 C_SRCS +=  \
 ../DIO.c \
 ../DIO_config.c \
+../glasses_sm.c \
 ../ICU.c \
 ../ICU_Config.c \
 ../Interrupts.c \
 ../main.c \
+../motor.c \
 ../PWM.c \
 ../PWM_Config.c \
+../speaker.c \
 ../timer.c \
 ../US.c \
 ../UsConfig.c
@@ -57,12 +60,15 @@ ASM_SRCS +=
 OBJS +=  \
 DIO.o \
 DIO_config.o \
+glasses_sm.o \
 ICU.o \
 ICU_Config.o \
 Interrupts.o \
 main.o \
+motor.o \
 PWM.o \
 PWM_Config.o \
+speaker.o \
 timer.o \
 US.o \
 UsConfig.o
@@ -71,12 +77,15 @@ UsConfig.o
 OBJS_AS_ARGS +=  \
 DIO.o \
 DIO_config.o \
+glasses_sm.o \
 ICU.o \
 ICU_Config.o \
 Interrupts.o \
 main.o \
+motor.o \
 PWM.o \
 PWM_Config.o \
+speaker.o \
 timer.o \
 US.o \
 UsConfig.o
@@ -85,12 +94,15 @@ UsConfig.o
 C_DEPS +=  \
 DIO.d \
 DIO_config.d \
+glasses_sm.d \
 ICU.d \
 ICU_Config.d \
 Interrupts.d \
 main.d \
+motor.d \
 PWM.d \
 PWM_Config.d \
+speaker.d \
 timer.d \
 US.d \
 UsConfig.d
@@ -99,12 +111,15 @@ UsConfig.d
 C_DEPS_AS_ARGS +=  \
 DIO.d \
 DIO_config.d \
+glasses_sm.d \
 ICU.d \
 ICU_Config.d \
 Interrupts.d \
 main.d \
+motor.d \
 PWM.d \
 PWM_Config.d \
+speaker.d \
 timer.d \
 US.d \
 UsConfig.d
@@ -119,6 +134,12 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 # AVR32/GNU C Compiler
+
+
+
+
+
+
 
 
 

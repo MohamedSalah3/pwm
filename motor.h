@@ -9,7 +9,8 @@
 #ifndef MOTOR_H_
 #define MOTOR_H_
 #include "PWM.h"
-
+#include "DIO.h"
+#include "timers.h"
 #define MOTOR_STOP 0
 #define MOTOR_TWO_M 1
 #define MOTOR_ONE_HALF_M 2

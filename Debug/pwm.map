@@ -676,46 +676,46 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x2377
+.debug_info     0x00000000     0x2372
  *(.debug_info)
  .debug_info    0x00000000      0x265 DIO.o
  .debug_info    0x00000265       0xf3 DIO_config.o
- .debug_info    0x00000358       0xe1 glasses_sm.o
- .debug_info    0x00000439      0x2ba ICU.o
- .debug_info    0x000006f3       0xde ICU_Config.o
- .debug_info    0x000007d1      0x5ff Interrupts.o
- .debug_info    0x00000dd0       0x8e main.o
- .debug_info    0x00000e5e      0x1c8 motor.o
- .debug_info    0x00001026      0x26e PWM.o
- .debug_info    0x00001294       0xe5 PWM_Config.o
- .debug_info    0x00001379      0x174 speaker.o
- .debug_info    0x000014ed      0x820 timer.o
- .debug_info    0x00001d0d      0x316 US.o
- .debug_info    0x00002023       0xbd UsConfig.o
- .debug_info    0x000020e0       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .debug_info    0x000021bd       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .debug_info    0x0000229a       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .debug_info    0x00000358       0xdc glasses_sm.o
+ .debug_info    0x00000434      0x2ba ICU.o
+ .debug_info    0x000006ee       0xde ICU_Config.o
+ .debug_info    0x000007cc      0x5ff Interrupts.o
+ .debug_info    0x00000dcb       0x8e main.o
+ .debug_info    0x00000e59      0x1c8 motor.o
+ .debug_info    0x00001021      0x26e PWM.o
+ .debug_info    0x0000128f       0xe5 PWM_Config.o
+ .debug_info    0x00001374      0x174 speaker.o
+ .debug_info    0x000014e8      0x820 timer.o
+ .debug_info    0x00001d08      0x316 US.o
+ .debug_info    0x0000201e       0xbd UsConfig.o
+ .debug_info    0x000020db       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_info    0x000021b8       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_info    0x00002295       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0xb4c
+.debug_abbrev   0x00000000      0xb35
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0xe5 DIO.o
  .debug_abbrev  0x000000e5       0x75 DIO_config.o
- .debug_abbrev  0x0000015a       0x72 glasses_sm.o
- .debug_abbrev  0x000001cc      0x12a ICU.o
- .debug_abbrev  0x000002f6       0x76 ICU_Config.o
- .debug_abbrev  0x0000036c       0xa1 Interrupts.o
- .debug_abbrev  0x0000040d       0x5d main.o
- .debug_abbrev  0x0000046a       0xdb motor.o
- .debug_abbrev  0x00000545      0x12d PWM.o
- .debug_abbrev  0x00000672       0x66 PWM_Config.o
- .debug_abbrev  0x000006d8       0xc2 speaker.o
- .debug_abbrev  0x0000079a      0x1ce timer.o
- .debug_abbrev  0x00000968      0x133 US.o
- .debug_abbrev  0x00000a9b       0x75 UsConfig.o
- .debug_abbrev  0x00000b10       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .debug_abbrev  0x00000b24       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .debug_abbrev  0x00000b38       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .debug_abbrev  0x0000015a       0x5b glasses_sm.o
+ .debug_abbrev  0x000001b5      0x12a ICU.o
+ .debug_abbrev  0x000002df       0x76 ICU_Config.o
+ .debug_abbrev  0x00000355       0xa1 Interrupts.o
+ .debug_abbrev  0x000003f6       0x5d main.o
+ .debug_abbrev  0x00000453       0xdb motor.o
+ .debug_abbrev  0x0000052e      0x12d PWM.o
+ .debug_abbrev  0x0000065b       0x66 PWM_Config.o
+ .debug_abbrev  0x000006c1       0xc2 speaker.o
+ .debug_abbrev  0x00000783      0x1ce timer.o
+ .debug_abbrev  0x00000951      0x133 US.o
+ .debug_abbrev  0x00000a84       0x75 UsConfig.o
+ .debug_abbrev  0x00000af9       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_abbrev  0x00000b0d       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_abbrev  0x00000b21       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
 
 .debug_line     0x00000000      0xa22
  *(.debug_line)

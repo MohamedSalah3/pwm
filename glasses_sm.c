@@ -6,6 +6,9 @@
  */
 #include "glasses_sm.h"
 
+static uint16_t Distance = 0;
+static uint8_t state_machine=0;
+
 static uint32_t ticks=0;
 void system_init(void)
 {
@@ -20,8 +23,6 @@ speaker_init();
 
 void system_update(void)
 {
-static uint16_t Distance = 0;
-static uint8_t state_machine=0;
 Us_Trigger();
 Us_GetDistance(&Distance);
 

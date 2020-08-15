@@ -18,7 +18,7 @@
 #define SPEAKER_ONE_M 3
 #define SPEAKER_HALF_M 4
 #define SPEAKER_30_CM 5
-#define SPEAKER_20_CM 6
+#define SPEAKER_20_CM 6/*925ms motor on ,buzzer on*/
 
 
 

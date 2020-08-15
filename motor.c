@@ -25,7 +25,7 @@ ERROR_STATUS motor_start_sm(uint8_t state)
   uint8_t ret=E_OK;
   static uint8_t speed=0;
     static uint16_t counter=0;
-	 Pwm_Start(PWM_CH0,80,10);
+	 Pwm_Start(PWM_CH0,speed,10);
     if (timer2_interrupt_raised)
     {
 	    counter++;
